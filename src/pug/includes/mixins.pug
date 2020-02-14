@@ -1,0 +1,8 @@
+//- Variables
+- var links = ["Почему мы?", "Номера", "Отзывы", "Как нас найти"];
+
+//- Mixins
+mixin menu
+  ul.nav__list
+    each link in links
+      li.nav__list-item: a.nav__list-link(href="#")= link

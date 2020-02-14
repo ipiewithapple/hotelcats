@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+  background: $bg;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+
+  &:hover {
+    color: $main;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h3, h4 {
+  font-weight: 500;
+}
+
+section {
+  margin-bottom: 140px;
+}
