@@ -1,0 +1,23 @@
+.footer {
+  color: #8F8F8F;
+  background-color: #ffffff;
+}
+
+.footer__copyright {
+  padding: 20px 0;
+  font-size: 12px;
+  border-top: 1px solid #efefef;
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & a {
+    color: #8F8F8F;
+
+    &:hover {
+      color: $main;
+    }
+  }
+}
