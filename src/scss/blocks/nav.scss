@@ -1,11 +1,13 @@
 .nav {
   display: flex;
+  flex-basis: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
 }
 
 .nav__list {
+  position: relative;
   display: flex;
 }
 
@@ -14,5 +16,53 @@
 
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.nav__burger {
+  display: none;
+  width: 22px;
+  height: auto;
+  cursor: pointer;
+
+  & span {
+    margin-bottom: 4px;
+    transition: $anim;
+    @include toggle;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover span {
+    background-color: $main;
+  }
+
+  &--open span {
+    transition: $anim;
+
+    &:nth-child(1) {
+      transform: rotate(-45deg);
+      margin-bottom: -4px;
+    }
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    &:nth-child(3) {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+
+// Media
+
+@media (max-width: $mobile-only) {
+  .nav__burger {
+    display: flex;
+    flex-direction: column;
   }
 }

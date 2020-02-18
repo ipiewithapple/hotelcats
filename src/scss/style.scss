@@ -1,8 +1,11 @@
 // fonts
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,600,700&display=swap&subset=cyrillic');
 
 // variables
 @import "variables.scss";
+
+// mixins
+@import "mixins.scss";
 
 // global
 @import "global.scss";

@@ -2,6 +2,12 @@
 - var links = ["Почему мы?", "Номера", "Отзывы", "Как нас найти"];
 
 //- Mixins
+mixin social
+  ul.social-list
+    li.social-list__item: a(href="#").social-list__link
+    li.social-list__item: a(href="#").social-list__link
+    li.social-list__item: a(href="#").social-list__link
+
 mixin nav
   nav.nav
     .nav__logo
@@ -9,3 +15,13 @@ mixin nav
     ul.nav__list
       each link in links
         li.nav__list-item: a.nav__list-link(href="#")= link
+
+mixin nav-mobile
+  nav.nav-mobile
+    .nav-mobile__logo
+      img.nav-mobile__logo-img(src="./img/logo.svg", alt="Котейка")
+    ul.nav-mobile__list
+      each link in links
+        li.nav-mobile__list-item: a.nav-mobile__list-link(href="#")= link
+    a(href="tel:+").nav-mobile__tel 8 (800) 333-55-99
+    +social
