@@ -24,16 +24,24 @@ mixin social
 
 mixin nav
   nav.nav
-    .nav__logo
-      img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
+    if title== "Котейка | Главная"
+      .nav__logo
+        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
+    else
+      a(href="/").nav__logo
+        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
     ul.nav__list
       each link in links
         li.nav__list-item: a.nav__list-link(href="#")= link
 
 mixin nav-mobile
   nav.nav-mobile
-    .nav-mobile__logo
-      img.nav-mobile__logo-img(src="./img/logo.svg", alt="Котейка")
+    if title== "Котейка | Главная"
+      .nav-mobile__logo
+        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
+    else
+      a(href="/").nav-mobile__logo
+        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
     ul.nav-mobile__list
       each link in links
         li.nav-mobile__list-item: a.nav-mobile__list-link(href="#")= link

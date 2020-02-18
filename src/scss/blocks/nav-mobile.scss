@@ -6,7 +6,7 @@
   display: none;
   width: 100%;
   height: 100vh;
-  padding: 15px;
+  padding: 12px 15px;
   background-color: $main;
   transition: $anim;
 
@@ -17,6 +17,7 @@
 }
 
 .nav-mobile__logo {
+  display: block;
   width: 46px;
   height: 38px;
   margin-bottom: 50px;
