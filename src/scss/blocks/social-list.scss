@@ -1,0 +1,22 @@
+.social-list {
+  display: flex;
+}
+
+.social-list__item {
+  margin-right: 20px;
+
+  &:nth-child(3) {
+    margin-right: 0;
+
+    &:hover path:nth-child(2) {
+      fill: $main;
+    }
+  }
+}
+
+.social-list__link {
+
+  &:hover svg>circle {
+    fill: $main;
+  }
+}
