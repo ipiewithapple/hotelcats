@@ -1,0 +1,21 @@
+.rooms {
+  background: url("../img/fish.png") no-repeat;
+  background-size: 50%;
+  background-position: 0% 110px;
+}
+
+.rooms__list-item {
+  @include list-item;
+}
+
+.rooms__list-img {
+  border-radius: 8px 8px 0 0;
+}
+
+.rooms__list-wrapper {
+  padding: 25px;
+}
+
+.rooms__list-title {
+  font-size: 20px;
+}

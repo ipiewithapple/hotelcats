@@ -9,6 +9,10 @@
     {title: "Ежедневные прогулки", desc: "По вашему желанию мы выгуливаем вашего питомца два раза в день на специализированной закрытой территории.", icon: "icon-cat.png"},
     {title: "Лучшие ветеринары", desc: "В гостинице 24 часа дежурит ветеринарный врач, который окажет любую помощь в случае необходимости.", icon: "icon-vet.png"},
   ]
+-
+  var rooms = [
+    {title: "Эконом плюс", img: "room-slide-1.jpg", square: "Размеры (ШхГхВ) 90х100х180 см", price: "Цена за сутки: 200₽"}
+  ]
 
 //- Mixins
 mixin social
@@ -64,3 +68,16 @@ mixin abouts-list
         img.abouts__list-icon(src="./img/" + item.icon alt= item.title)
         h3.abouts__list-title= item.title
         p.abouts__list-desc= item.desc
+
+mixin rooms-list
+  ul.rooms__list
+    each room in rooms
+      li.rooms__list-item
+        picture
+          source(media="(min-width: 1366px)", srcset="./img/d-" + room.img)
+          source(media="(min-width: 768px)", srcset="./img/t-" + room.img)
+          img.rooms__list-img(src="./img/m-" + room.img, alt= room.title)
+        .rooms__list-wrapper
+          h3.rooms__list-title= room.title
+          button.btn.btn--dark Забронировать
+            span
