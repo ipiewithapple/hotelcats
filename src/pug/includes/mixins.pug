@@ -1,5 +1,14 @@
 //- Variables
 - var links = ["Почему мы?", "Номера", "Отзывы", "Как нас найти"];
+-
+  var abouts = [
+    {title: "Комфортная температура", desc: "Во всех номерах поддерживается комфортная температура в пределах 23 - 25 градусов. В каждом номере можно дополнительно отрегулировать температуру.", icon: "icon-temp.png"},
+    {title: "Видеонаблюдение", desc: "Мы предоставляем доступ в нашу систему. Вы сможете следить за своим питомцем со своего смартфона или компьютера.", icon: "icon-video.png"},
+    {title: "Услуги Зоотакси", desc: "Мы приедем за вашим питомцем в любой район Санкт-Петербурга.", icon: "icon-car.png"},
+    {title: "Сбалансированное питание", desc: "Вы можете привезти свой корм или доверить рацион своего питомца нашим профессионалам.", icon: "icon-food.png"},
+    {title: "Ежедневные прогулки", desc: "По вашему желанию мы выгуливаем вашего питомца два раза в день на специализированной закрытой территории.", icon: "icon-cat.png"},
+    {title: "Лучшие ветеринары", desc: "В гостинице 24 часа дежурит ветеринарный врач, который окажет любую помощь в случае необходимости.", icon: "icon-vet.png"},
+  ]
 
 //- Mixins
 mixin social
@@ -26,10 +35,10 @@ mixin nav
   nav.nav
     if title== "Котейка | Главная"
       .nav__logo
-        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
+        img.nav__logo-img(src="./img/logo.svg" alt="Котейка")
     else
       a(href="/").nav__logo
-        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
+        img.nav__logo-img(src="./img/logo.svg" alt="Котейка")
     ul.nav__list
       each link in links
         li.nav__list-item: a.nav__list-link(href="#")= link
@@ -38,12 +47,20 @@ mixin nav-mobile
   nav.nav-mobile
     if title== "Котейка | Главная"
       .nav-mobile__logo
-        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
+        img.nav__logo-img(src="./img/logo.svg" alt="Котейка")
     else
       a(href="/").nav-mobile__logo
-        img.nav__logo-img(src="./img/logo.svg", alt="Котейка")
+        img.nav__logo-img(src="./img/logo.svg" alt="Котейка")
     ul.nav-mobile__list
       each link in links
         li.nav-mobile__list-item: a.nav-mobile__list-link(href="#")= link
     a(href="tel:+").nav-mobile__tel 8 (800) 333-55-99
     +social
+
+mixin abouts-list
+  ul.abouts__list
+    each item in abouts
+      li.abouts__list-item
+        img.abouts__list-icon(src="./img/" + item.icon alt= item.title)
+        h3.abouts__list-title= item.title
+        p.abouts__list-desc= item.desc

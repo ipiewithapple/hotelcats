@@ -1,0 +1,31 @@
+.abouts {
+  background: url("../img/paw.png") no-repeat;
+  background-size: 35%;
+  background-position: 105% 45px;
+}
+
+.abouts__list-item {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+  border-radius: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.abouts__list-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 30px;
+}
+
+.abouts__list-title {
+  margin-bottom: 20px;
+}
+
+.abouts__list-desc {
+  font-size: 15px;
+}

@@ -1,4 +1,5 @@
 -var title = "Котейка | Главная"
+-var about = [{title: "One", desc: "One desc"}];
 include ../includes/mixins.pug
 
 <!DOCTYPE html>
@@ -17,4 +18,8 @@ html(lang="en")
         span.main__desc Уютная гостиница для котов и кошек
         button.btn.btn--light Забронировать
           span
+      section.abouts
+        h2.abouts__title Почему мы?
+        .container
+          +abouts-list
     include ../includes/footer.pug
