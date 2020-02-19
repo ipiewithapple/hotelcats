@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  &::selection {
+    color: #ffffff;
+    background: $main;
+   }
 }
 
 body {
@@ -19,6 +24,16 @@ a {
   &:hover {
     color: $main;
   }
+
+  &:focus {
+    outline: 2px solid $main;
+  }
+}
+
+button {
+  &:focus {
+    outline: 2px solid $main;
+  }
 }
 
 img {
@@ -29,6 +44,14 @@ img {
 
 ul {
   list-style: none;
+}
+
+h1 {
+  font-size: 44px;
+}
+
+h2 {
+  font-size: 28px;
 }
 
 h1, h2 {
