@@ -11,7 +11,12 @@
   ]
 -
   var rooms = [
-    {title: "Эконом плюс", img: "room-slide-1.jpg", square: "Размеры (ШхГхВ) 90х100х180 см", price: "Цена за сутки: 200₽"}
+    {title: "Эконом плюс", img: "room-slide-1.jpg", square: "Площадь - 0,90 м2", sizes: "Размеры (ШхГхВ) 90х100х180 см", price: "Цена за сутки: 200₽"}
+  ]
+
+-
+  var reviews = [
+    "Первый раз пришлось оставить нашего котика в гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И мы и котик остались очень довольны!"
   ]
 
 //- Mixins
@@ -79,5 +84,22 @@ mixin rooms-list
           img.rooms__list-img(src="./img/m-" + room.img, alt= room.title)
         .rooms__list-wrapper
           h3.rooms__list-title= room.title
+          ul.rooms__list-inner
+            li= room.square
+            li= room.sizes
+            li= room.price
           button.btn.btn--dark Забронировать
             span
+
+mixin slider
+  ul.slider
+    li.slider__item.slider__item--active
+    li.slider__item
+    li.slider__item
+
+mixin reviews-list
+  ul.reviews__list
+    each review in reviews
+      li.reviews__list-item
+        span.reviews__list-quote &#8220;
+        blockquote.reviews__list-review= review

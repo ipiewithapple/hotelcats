@@ -1,5 +1,5 @@
 -var title = "Котейка | Главная"
--var about = [{title: "One", desc: "One desc"}];
+
 include ../includes/mixins.pug
 
 <!DOCTYPE html>
@@ -26,4 +26,10 @@ html(lang="en")
         h2.rooms__title Номера
         .container
           +rooms-list
+          +slider
+      section.reviews
+        h2.reviews__title Отзывы
+        .container
+          +reviews-list
+          +slider
     include ../includes/footer.pug

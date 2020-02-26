@@ -4,6 +4,10 @@
   background-position: 0% 110px;
 }
 
+.rooms__list {
+  margin-bottom: 30px;
+}
+
 .rooms__list-item {
   @include list-item;
 }
@@ -17,5 +21,27 @@
 }
 
 .rooms__list-title {
+  margin-bottom: 25px;
   font-size: 20px;
+}
+
+.rooms__list-inner {
+  margin-bottom: 25px;
+  padding-right: 50px;
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    font-size: 15px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin-right: 8px;
+      background-color: $main;
+      border-radius: 50px;
+    }
+  }
 }

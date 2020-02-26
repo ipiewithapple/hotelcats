@@ -1,0 +1,25 @@
+.reviews {
+  background: url("../img/paw.png") no-repeat;
+  background-size: 35%;
+  background-position: 105% 45px;
+}
+
+.reviews__list {
+  margin-bottom: 30px;
+}
+
+.reviews__list-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 25px 25px 25px 0;
+  @include list-item;
+}
+
+.reviews__list-quote {
+  margin-left: 25px;
+  margin-right: 10px;
+  font-family: 'Lato';
+  font-size: 54px;
+  line-height: 45px;
+  color: $main;
+}

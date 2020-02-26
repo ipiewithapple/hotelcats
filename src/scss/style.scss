@@ -1,5 +1,6 @@
 // fonts
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,600,700&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Lato:400&display=swap');
 
 // variables
 @import "variables.scss";
@@ -20,6 +21,7 @@
 @import "./blocks/btn.scss";
 @import "./blocks/abouts.scss";
 @import "./blocks/rooms.scss";
-
+@import "./blocks/slider.scss";
+@import "./blocks/reviews.scss";
 
 @import "./blocks/footer.scss";
