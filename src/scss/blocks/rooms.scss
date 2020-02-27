@@ -8,15 +8,12 @@
   margin-bottom: 30px;
 }
 
-.rooms__list-item {
-  @include list-item;
-}
-
 .rooms__list-img {
   border-radius: 8px 8px 0 0;
 }
 
 .rooms__list-wrapper {
+  @include list-item;
   padding: 25px;
 }
 
@@ -28,6 +25,7 @@
 .rooms__list-inner {
   margin-bottom: 25px;
   padding-right: 50px;
+
   li {
     display: flex;
     align-items: center;
@@ -43,5 +41,41 @@
       background-color: $main;
       border-radius: 50px;
     }
+  }
+}
+
+// Media
+@media (min-width: $tablet) {
+  .rooms {
+    background-size: 45%;
+    background-position: 0% 160px;
+  }
+
+  .rooms__list {
+    margin-bottom: 50px;
+  }
+
+  .rooms__list-item {
+    display: flex;
+    align-items: center;
+
+    & picture {
+      flex-basis: 70%;
+    }
+  }
+
+  .rooms__list-img {
+    border-radius: 8px;
+  }
+
+  .rooms__list-wrapper {
+    position: absolute;
+    right: 45px;
+    width: 45%;
+    padding: 40px;
+  }
+
+  .rooms__list-inner {
+    padding-right: 0px;
   }
 }

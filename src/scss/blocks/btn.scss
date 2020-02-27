@@ -18,7 +18,7 @@
     background: #ffffff;
     box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.1);
 
-    & > span {
+    &>span {
       display: block;
       width: 36px;
       height: 36px;
@@ -31,12 +31,14 @@
   }
 
   &--dark {
-    padding-left: 49px;
+    width: 240px;
+    padding-left: 46px;
     padding-right: 7px;
+    margin: 0 auto;
     color: #ffffff;
     background: $secondary;
 
-    & > span {
+    &>span {
       display: block;
       width: 36px;
       height: 36px;
@@ -61,4 +63,13 @@
     font-size: 14px;
   }
 
+}
+
+@media (min-width: $tablet) {
+  .btn {
+    &--dark {
+      width: 206px;
+      padding-left: 30px;
+    }
+  }
 }
