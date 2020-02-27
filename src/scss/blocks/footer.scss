@@ -1,11 +1,16 @@
 .footer {
-  color: #8F8F8F;
+  margin-top: 70px;
   background-color: #ffffff;
+}
+
+.footer__contacts {
+  background-color: $main;
 }
 
 .footer__copyright {
   padding: 15px 0 30px;
   font-size: 12px;
+  color: #8F8F8F;
   border-top: 1px solid #efefef;
 
   & .container {
