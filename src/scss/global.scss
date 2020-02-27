@@ -51,7 +51,6 @@ h1 {
 }
 
 h2 {
-  position: relative;
   margin-bottom: 40px;
   font-size: 28px;
 }
@@ -80,6 +79,11 @@ section {
 @media(min-width: $tablet) {
   h1 {
     font-size: 62px;
+  }
+
+  h2 {
+    margin-bottom: 60px;
+    font-size: 36px;
   }
 
   section {

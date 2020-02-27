@@ -2,3 +2,10 @@
   position: relative;
   padding: 0 15px;
 }
+
+// Media
+@media(min-width: $tablet) {
+  .container {
+    padding: 0 45px;
+  }
+}
