@@ -5,7 +5,13 @@
 }
 
 .reviews__list {
+  display: flex;
   margin-bottom: 30px;
+}
+
+.reviews__list-review {
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .reviews__list-item {
@@ -22,4 +28,42 @@
   font-size: 54px;
   line-height: 45px;
   color: $main;
+}
+
+// Media
+@media (min-width: $tablet) {
+  .reviews__list {
+    margin-bottom: 50px;
+  }
+
+  .reviews__list-item {
+    flex-basis: 65%;
+    padding: 35px 35px 35px 0;
+  }
+
+  .reviews__list-quote {
+    margin-left: 35px;
+    margin-right: 8px;
+    font-size: 72px;
+    line-height: 60px;
+  }
+
+  .reviews__list blockquote {
+    &>p {
+      margin-bottom: 25px;
+    }
+
+    &>footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: $text-secondary;
+    }
+  }
+}
+
+@media (max-width: $mobile-only) {
+  .reviews__list blockquote>footer {
+    display: none;
+  }
 }

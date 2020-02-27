@@ -16,7 +16,7 @@
 
 -
   var reviews = [
-    "Первый раз пришлось оставить нашего котика в гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И мы и котик остались очень довольны!"
+    {author: "Валерия Гришаева", date: "15 ноября, 2019",review: "Первый раз пришлось оставить нашего котика в гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И мы и котик остались очень довольны!"}
   ]
 
 //- Mixins
@@ -102,4 +102,8 @@ mixin reviews-list
     each review in reviews
       li.reviews__list-item
         span.reviews__list-quote &#8220;
-        blockquote.reviews__list-review= review
+        blockquote
+          p.reviews__list-review= review.review
+          footer
+            span.reviews__list-author= review.author
+            span.reviews__list-date= review.date
