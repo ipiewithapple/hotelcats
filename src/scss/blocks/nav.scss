@@ -73,6 +73,16 @@
 
 
 // Media
+@media (min-width: $tablet) {
+  .nav__logo {
+    width: 63px;
+    height: 52px;
+  }
+
+  .nav__list-link {
+    font-weight: 500;
+  }
+}
 
 @media (max-width: $mobile-only) {
   .nav__burger {

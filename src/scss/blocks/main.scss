@@ -8,6 +8,10 @@
   background-size: cover;
 }
 
+.main__city {
+  font-size: 12px;
+}
+
 .main__title {
   margin-bottom: 5px;
 }
@@ -16,4 +20,26 @@
   text-align: center;
   margin-bottom: 40px;
   font-weight: 500;
+}
+
+// Media
+@media (min-width: $tablet) {
+  .main__header {
+    padding-top: 140px;
+    height: 868px;
+    background: url("../img/head-bg-t.jpg") no-repeat center center;
+    background-position-y: -76px;
+  }
+
+  .main__city {
+    font-size: 14px;
+  }
+
+  .main__title {
+    margin-bottom: 25px;
+  }
+
+  .main__desc {
+    font-size: 20px;
+  }
 }

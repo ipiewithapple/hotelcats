@@ -6,7 +6,7 @@
   &::selection {
     color: #ffffff;
     background: $main;
-   }
+  }
 }
 
 body {
@@ -60,16 +60,29 @@ h3 {
   font-size: 18px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
   text-align: center;
 }
 
-h3, h4 {
+h3,
+h4 {
   font-weight: 500;
 }
 
 section {
   position: relative;
   padding-top: 70px;
+}
+
+// Media
+@media(min-width: $tablet) {
+  h1 {
+    font-size: 62px;
+  }
+
+  section {
+    padding-top: 120px;
+  }
 }
