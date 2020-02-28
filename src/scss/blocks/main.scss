@@ -49,5 +49,15 @@
   .main__header {
     height: 504px;
     background: url("../img/head-bg-d.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: $desktop) {
+  .main__header {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0;
+    padding-left: 198px;
   }
 }
