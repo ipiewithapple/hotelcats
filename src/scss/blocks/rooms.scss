@@ -79,3 +79,9 @@
     padding-right: 0px;
   }
 }
+
+@media (min-width: $desktop-sm) {
+  .rooms__list-wrapper {
+    right: 98px;
+  }
+}

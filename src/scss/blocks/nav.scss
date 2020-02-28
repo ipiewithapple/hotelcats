@@ -73,6 +73,14 @@
 
 
 // Media
+@media (max-width: $mobile-only) {
+  .nav__burger {
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (min-width: $tablet) {
   .nav__logo {
     width: 63px;
@@ -81,13 +89,5 @@
 
   .nav__list-link {
     font-weight: 500;
-  }
-}
-
-@media (max-width: $mobile-only) {
-  .nav__burger {
-    z-index: 101;
-    display: flex;
-    flex-direction: column;
   }
 }

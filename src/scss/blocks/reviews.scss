@@ -31,6 +31,12 @@
 }
 
 // Media
+@media (max-width: $mobile-only) {
+  .reviews__list blockquote>footer {
+    display: none;
+  }
+}
+
 @media (min-width: $tablet) {
   .reviews__list {
     margin-bottom: 50px;
@@ -59,11 +65,5 @@
       font-size: 14px;
       color: $text-secondary;
     }
-  }
-}
-
-@media (max-width: $mobile-only) {
-  .reviews__list blockquote>footer {
-    display: none;
   }
 }
