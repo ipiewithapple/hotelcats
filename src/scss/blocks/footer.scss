@@ -117,13 +117,13 @@
     display: flex;
 
     & .container {
-      flex-basis: 50%;
+      width: 50%;
       padding: 60px 45px;
     }
   }
 
   .footer__map {
-    flex-basis: 50%;
+    width: 50%;
     height: auto;
   }
 
@@ -137,6 +137,33 @@
       & a {
         margin-top: 0;
       }
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .footer__contacts {
+    & .container {
+      width: 40%;
+      padding: 70px;
+      padding-left: 198px;
+    }
+
+    & h3,
+    p,
+    a {
+      font-size: 16px;
+    }
+  }
+
+  .footer__map {
+    width: 60%;
+  }
+
+  .footer__copyright,
+  .footer__nav {
+    & .container {
+      padding: 0 198px;
     }
   }
 }
