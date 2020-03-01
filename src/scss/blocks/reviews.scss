@@ -11,7 +11,6 @@
 
 .reviews__list-review {
   font-size: 15px;
-  font-weight: 500;
 }
 
 .reviews__list-item {
@@ -43,7 +42,7 @@
   }
 
   .reviews__list-item {
-    flex-basis: 65%;
+    width: 65%;
     padding: 35px 35px 35px 0;
   }
 
@@ -65,5 +64,24 @@
       font-size: 14px;
       color: $text-secondary;
     }
+  }
+}
+
+@media (min-width: $desktop) {
+  .reviews {
+    background-size: 35%;
+    background-position: 112% -10px;
+  }
+
+  .reviews__list {
+    margin-bottom: 55px;
+  }
+
+  .reviews__list-item {
+    width: 40%;
+  }
+
+  .reviews__list-review {
+    font-size: 16px;
   }
 }

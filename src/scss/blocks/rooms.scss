@@ -27,7 +27,7 @@
   margin-bottom: 25px;
   padding-right: 50px;
 
-  li {
+  & li {
     display: flex;
     align-items: center;
     margin-bottom: 17px;
@@ -100,6 +100,10 @@
     margin-bottom: 55px;
   }
 
+  .rooms__list-title {
+    font-size: 22px;
+  }
+
   .rooms__list-item {
     & picture {
       width: 60%;
@@ -110,5 +114,9 @@
     right: 168px;
     width: 35%;
     padding: 40px 100px;
+  }
+
+  .rooms__list-inner li{
+      font-size: 16px;
   }
 }
