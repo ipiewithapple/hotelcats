@@ -46,6 +46,10 @@
 }
 
 @media(min-width: $desktop) {
+  .abouts {
+    background-size: 35%;
+    background-position: 115% -30px;
+  }
   .abouts__list-item {
     flex-basis: calc(33.333% - 20px);
     padding: 30px;
