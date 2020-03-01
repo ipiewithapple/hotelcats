@@ -62,7 +62,7 @@
     align-items: center;
 
     & picture {
-      flex-basis: 70%;
+      width: 70%;
     }
   }
 
@@ -91,5 +91,24 @@
 @media (min-width: $desktop) {
   .rooms {
     padding-top: 110px;
+    background-size: 35%;
+    background-position: 0% 140px;
+  }
+
+  .rooms__list {
+    padding: 0 70px;
+    margin-bottom: 55px;
+  }
+
+  .rooms__list-item {
+    & picture {
+      width: 60%;
+    }
+  }
+
+  .rooms__list-wrapper {
+    right: 168px;
+    width: 35%;
+    padding: 40px 100px;
   }
 }
