@@ -1,11 +1,15 @@
 .main__header {
+  padding-top: 0;
+  height: 457px;
+  background: url("../img/head-bg-m.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.main__header-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 457px;
   padding-top: 50px;
-  background: url("../img/head-bg-m.jpg") no-repeat center center;
-  background-size: cover;
 }
 
 .main__city {
@@ -25,11 +29,14 @@
 // Media
 @media (min-width: $tablet) {
   .main__header {
-    padding-top: 140px;
     height: 868px;
     background: url("../img/head-bg-t.jpg") no-repeat center center;
     background-size: cover;
     background-position-y: -76px;
+  }
+
+  .main__header-wrap {
+    padding-top: 140px;
   }
 
   .main__city {
@@ -54,10 +61,13 @@
 }
 
 @media (min-width: $desktop) {
-  .main__header {
+  .main__header-wrap {
     justify-content: center;
     align-items: flex-start;
+    max-width: 1366px;
+    height: 100%;
     padding-top: 0;
     padding-left: 198px;
+    margin: 0 auto;
   }
 }
