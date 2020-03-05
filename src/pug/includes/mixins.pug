@@ -1,5 +1,11 @@
 //- Variables
-- var links = ["Почему мы?", "Номера", "Отзывы", "Как нас найти"];
+-
+  var links = [
+    {title: "Почему мы?", href: "#abouts"},
+    {title: "Номера", href: "/rooms.html"},
+    {title: "Отзывы", href: "#reviews"},
+    {title: "Как нас найти", href: "#footer"},
+  ]
 -
   var abouts = [
     {title: "Комфортная температура", desc: "Во всех номерах поддерживается комфортная температура в пределах 23 - 25 градусов. В каждом номере можно дополнительно отрегулировать температуру.", icon: "icon-temp.png"},
@@ -50,7 +56,7 @@ mixin nav
         img.nav__logo-img(src="./img/logo.svg" alt="Котейка")
     ul.nav__list
       each link in links
-        li.nav__list-item: a.nav__list-link(href="#")= link
+        li.nav__list-item: a.nav__list-link(href= link.href)= link.title
 
 mixin nav-mobile
   nav.nav-mobile
@@ -69,7 +75,7 @@ mixin nav-mobile
 mixin abouts-list
   ul.abouts__list
     each item in abouts
-      li.abouts__list-item
+      li.abouts__list-item.wow.slideInUp
         img.abouts__list-icon(src="./img/" + item.icon alt= item.title)
         h3.abouts__list-title= item.title
         p.abouts__list-desc= item.desc
@@ -78,12 +84,12 @@ mixin rooms-list
   ul.rooms__list
     each room in rooms
       li.rooms__list-item
-        picture
-          source(media="(min-width: 1366px)", srcset="./img/d-" + room.img)
-          source(media="(min-width: 768px)", srcset="./img/t-" + room.img)
-          img.rooms__list-img(src="./img/m-" + room.img, alt= room.title)
-        .rooms__list-wrapper
-          h3.rooms__list-title= room.title
+        picture.wow.slideInLeft(data-wow-delay="0.3s")
+          source(media="(min-width: 1366px)" srcset="./img/d-" + room.img)
+          source(media="(min-width: 768px)" srcset="./img/t-" + room.img)
+          img.rooms__list-img.wow.slideInLeft(src="./img/m-" + room.img, alt= room.title)
+        .rooms__list-wrapper.wow.slideInRight
+          a.rooms__list-title= room.title
           ul.rooms__list-inner
             li= room.square
             li= room.sizes
@@ -103,7 +109,7 @@ mixin slider-btns
     button.slider__btn.slider__btn--right: i.fas.fa-chevron-right
 
 mixin reviews-list
-  ul.reviews__list
+  ul.reviews__list.wow.slideInUp
     each review in reviews
       li.reviews__list-item
         span.reviews__list-quote &#8220;

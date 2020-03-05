@@ -19,8 +19,11 @@
 }
 
 .rooms__list-title {
+  display: block;
   margin-bottom: 25px;
   font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .rooms__list-inner {
