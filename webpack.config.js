@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const fs = require('fs');
 const PAGES_DIR = `./src/pug/pages/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
+const webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -21,63 +22,63 @@ module.exports = {
   devtool: "source-map",
   module: {
     rules: [{
-      test: /\.js$/,
-      include: path.resolve(__dirname, 'src/js'),
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            ['@babel/preset-env', {
-              modules: false
-            }],
-          ],
-          plugins: ['@babel/plugin-proposal-class-properties'],
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src/js'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', {
+                modules: false
+              }],
+            ],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          }
         }
+      },
+      {
+        test: /\.(sass|scss)$/,
+        include: path.resolve(__dirname, 'src/scss'),
+        use: [{
+            loader: MiniCssExtractPlugin.loader,
+            options: {}
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: false
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              sourceMap: true,
+              plugins: () => [
+                autoprefixer(),
+                require('cssnano')({
+                  preset: ['default', {
+                    discardComments: {
+                      removeAll: true,
+                    },
+                  }]
+                })
+              ]
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader'
       }
-    },
-    {
-      test: /\.(sass|scss)$/,
-      include: path.resolve(__dirname, 'src/scss'),
-      use: [{
-        loader: MiniCssExtractPlugin.loader,
-        options: {}
-      },
-      {
-        loader: "css-loader",
-        options: {
-          sourceMap: true,
-          url: false
-        }
-      },
-      {
-        loader: 'postcss-loader',
-        options: {
-          ident: 'postcss',
-          sourceMap: true,
-          plugins: () => [
-            autoprefixer(),
-            require('cssnano')({
-              preset: ['default', {
-                discardComments: {
-                  removeAll: true,
-                },
-              }]
-            })
-          ]
-        }
-      },
-      {
-        loader: "sass-loader",
-        options: {
-          sourceMap: true
-        }
-      }
-      ]
-    },
-    {
-      test: /\.pug$/,
-      loader: 'pug-loader'
-    }
     ]
   },
   plugins: [
@@ -88,11 +89,14 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./css/style.css"
     }),
-    new CopyWebpackPlugin([
-      {
-        from: './src/img',
-        to: './img'
-      }
-    ]),
+    new CopyWebpackPlugin([{
+      from: './src/img',
+      to: './img'
+    }]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
   ]
 };
