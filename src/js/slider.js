@@ -8,34 +8,40 @@ export default class Slider {
     this.sliderPoints = document.querySelectorAll(`.${parent} .slider__points-item`);
     this.sliderBtnLeft = document.querySelector(`.${parent} .slider__btn--left`);
     this.sliderBtnRight = document.querySelector(`.${parent} .slider__btn--right`);
+    this.slideWidth = '';
+    this.sliderParentPosition = 0;
+    this.pointId = 0;
+  }
+
+  animate() {
+    anime({
+      targets: this.slidesParent,
+      translateX: this.sliderParentPosition,
+      easing: 'linear',
+      duration: 300
+    });
+  }
+
+  removePoinActiveClass() {
+    this.sliderPoints.forEach((point) => {
+      point.classList.remove('slider__points-item--active');
+    })
   }
 
   onBtnsClick() {
-    let slideWidth = '';
-    let sliderParentPosition = 0;
-
     this.slides.forEach(el => {
-      slideWidth = el.offsetWidth;
+      this.slideWidth = el.offsetWidth;
     });
 
     this.sliderBtnLeft.addEventListener('click', () => {
-      sliderParentPosition >= 0 ? sliderParentPosition = -slideWidth * (this.slides.length - 1) : sliderParentPosition += slideWidth;
-      anime({
-        targets: this.slidesParent,
-        translateX: sliderParentPosition,
-        easing: 'linear',
-        duration: 300
-      });
+
+      this.sliderParentPosition >= 0 ? this.sliderParentPosition = -this.slideWidth * (this.slides.length - 1) : this.sliderParentPosition += this.slideWidth;
+      this.animate();
     })
 
     this.sliderBtnRight.addEventListener('click', () => {
-      sliderParentPosition < -this.slidesParent.offsetWidth + slideWidth * 2 ? sliderParentPosition = 0 : sliderParentPosition -= slideWidth;
-      anime({
-        targets: this.slidesParent,
-        translateX: sliderParentPosition,
-        easing: 'linear',
-        duration: 300
-      });
+      this.sliderParentPosition < -this.slidesParent.offsetWidth + this.slideWidth * 2 ? this.sliderParentPosition = 0 : this.sliderParentPosition -= this.slideWidth;
+      this.animate();
     })
 
 
@@ -47,27 +53,18 @@ export default class Slider {
       point.dataset.id = i;
 
       point.addEventListener('click', () => {
+        this.pointId = point.dataset.id;
 
-        this.sliderPoints.forEach((point) => {
-          point.classList.remove('slider__points-item--active');
-        });
+        this.removePoinActiveClass();
 
         point.classList.add('slider__points-item--active');
 
         if (point.dataset.id == 0) {
-          anime({
-            targets: this.slidesParent,
-            translateX: 0,
-            easing: 'linear',
-            duration: 300
-          });
+          this.sliderParentPosition = 0;
+          this.animate();
         } else {
-          anime({
-            targets: this.slidesParent,
-            translateX: this.slidesParent.offsetWidth / -3 * point.dataset.id,
-            easing: 'linear',
-            duration: 300
-          });
+          this.sliderParentPosition = -this.slideWidth * point.dataset.id;
+          this.animate();
         }
 
       })
