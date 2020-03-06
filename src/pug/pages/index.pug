@@ -28,14 +28,15 @@ html(lang="en")
       section.rooms#rooms
         h2.rooms__title Номера
         .container
-          .rooms__slider-wrap
+          .slider-wrapper
             +rooms-list
           +slider-points
           +slider-btns
       section.reviews#reviews
         h2.reviews__title Отзывы
         .container
-          +reviews-list
+          .slider-wrapper
+            +reviews-list
           +slider-points
           +slider-btns
     include ../includes/footer.pug

@@ -5,6 +5,7 @@
 }
 
 .reviews__list {
+  width: 300%;
   display: flex;
   margin-bottom: 30px;
 }
@@ -15,6 +16,7 @@
 
 .reviews__list-item {
   display: flex;
+  width: 100%;
   align-items: flex-start;
   padding: 25px 25px 25px 0;
   @include list-item;
@@ -37,13 +39,23 @@
 }
 
 @media (min-width: $tablet) {
+  .reviews .slider-wrapper {
+    overflow: visible;
+  }
+  
   .reviews__list {
+    width: calc(195% + 60px);
     margin-bottom: 50px;
   }
 
   .reviews__list-item {
     width: 65%;
     padding: 35px 35px 35px 0;
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .reviews__list-quote {
@@ -74,6 +86,7 @@
   }
 
   .reviews__list {
+    width: calc(120% + 60px);
     margin-bottom: 55px;
   }
 

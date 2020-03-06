@@ -6,7 +6,13 @@
 }
 
 .rooms__list {
+  width: 300%;
+  display: flex;
   margin-bottom: 30px;
+}
+
+.rooms__list-item {
+  width: 100%;
 }
 
 .rooms__list-img {
@@ -56,19 +62,11 @@
     background-position: 0% 140px;
   }
 
-  .rooms__slider-wrap {
-    width: 100%;
-    overflow: hidden;
-  }
-
   .rooms__list {
-    width: 300%;
-    display: flex;
     margin-bottom: 50px;
   }
 
   .rooms__list-item {
-    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
