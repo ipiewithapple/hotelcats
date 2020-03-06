@@ -11,10 +11,6 @@ export default class Slider {
     this.sliderBtnRight = document.querySelector(`.${parent} .slider__btn--right`);
   }
 
-  slidesAnim () {
-    
-  }
-
   onPointClick() {
     this.sliderPoints.forEach((point, i) => {
       point.dataset.id = i;
@@ -27,11 +23,15 @@ export default class Slider {
           anime({
             targets: this.slidesParent,
             translateX: 0,
+            easing: 'linear',
+            duration: 300
           });
         } else {
           anime({
             targets: this.slidesParent,
-            translateX: -100,
+            translateX: this.slidesParent.offsetWidth / -3 * point.dataset.id,
+            easing: 'linear',
+            duration: 300
           });
         }
       })
