@@ -28,18 +28,29 @@ export default class Slider {
     })
   }
 
+  setPointActiveClass() {
+    this.sliderPoints.forEach((point) => {
+      point.dataset.id == this.pointId ? point.classList.add('slider__points-item--active') : null;
+    })
+  }
+
   onBtnsClick() {
     this.slides.forEach(el => {
       this.slideWidth = el.offsetWidth;
     });
 
     this.sliderBtnLeft.addEventListener('click', () => {
-
+      this.pointId <= 0 ? this.pointId = 2 : this.pointId--;
+      this.removePoinActiveClass();
+      this.setPointActiveClass();
       this.sliderParentPosition >= 0 ? this.sliderParentPosition = -this.slideWidth * (this.slides.length - 1) : this.sliderParentPosition += this.slideWidth;
       this.animate();
     })
 
     this.sliderBtnRight.addEventListener('click', () => {
+      this.pointId >= 2 ? this.pointId = 0 : this.pointId++;
+      this.removePoinActiveClass();
+      this.setPointActiveClass();
       this.sliderParentPosition < -this.slidesParent.offsetWidth + this.slideWidth * 2 ? this.sliderParentPosition = 0 : this.sliderParentPosition -= this.slideWidth;
       this.animate();
     })
@@ -56,8 +67,7 @@ export default class Slider {
         this.pointId = point.dataset.id;
 
         this.removePoinActiveClass();
-
-        point.classList.add('slider__points-item--active');
+        this.setPointActiveClass();
 
         if (point.dataset.id == 0) {
           this.sliderParentPosition = 0;
