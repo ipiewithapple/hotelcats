@@ -9,9 +9,7 @@ Menu();
 new WOW().init();
 
 // Slider
-const slider = new Slider('reviews', 'reviews__list', 'reviews__list-item');
-slider.onPointClick();
-const slider1 = new Slider('rooms', 'rooms__list', 'rooms__list-item');
-slider1.onPointClick();
+new Slider('reviews', 'reviews__list', 'reviews__list-item').init();
+new Slider('rooms', 'rooms__list', 'rooms__list-item').init();
 
 
