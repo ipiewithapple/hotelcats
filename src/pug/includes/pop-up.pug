@@ -1,6 +1,25 @@
+-
+  var inputs = [
+    {type: "text", placeholder: "Ваше имя"},
+    {type: "text", placeholder: "Имя Питомца"},
+    {type: "number", placeholder: "Телефон"},
+    {type: "email", placeholder: "E-mail"}
+  ]
+
 .pop-up
   .pop-up__wrapper
     .pop-up__close
       span
       span
     p.pop-up__title Забронировать номер
+    form.pop-up__form
+      each input in inputs
+        input(type= input.type placeholder= input.placeholder required).pop-up__input
+      label Дата заезда
+      .pop-up__date
+        label с
+        input(type="text" placeholder="01.01.2020").pop-up__input.pop-up__date-input
+        label по
+        input(type="text" placeholder="01.01.2020").pop-up__input.pop-up__date-input
+      button(type="submit").btn.btn--dark.pop-up__submit Отправить заявку
+        span
