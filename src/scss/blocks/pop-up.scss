@@ -12,11 +12,25 @@
 
 .pop-up__wrapper {
   position: fixed;
+  left: 15px;
+  width: calc(100% - 30px);
   padding: 60px 15px;
-  margin: 70px 15px;
-  background: #FFFEFD;
+  margin: 70px 0;
   box-shadow: 0px 0px 25px rgba(153, 153, 153, 0.25);
   border-radius: 10px;
+  background: url("../img/paw-popup.png") no-repeat;
+  background-size: 40%;
+  background-position: -30px -30px;
+  background-color: #ffffff;
+
+  &--ok {
+    display: none;
+    margin-top: 70%;
+    background: url("../img/paw-popup-ok.png") no-repeat;
+    background-size: 40%;
+    background-position: -20px 120%;
+    background-color: #ffffff;
+  }
 }
 
 .pop-up__close {
@@ -56,6 +70,15 @@
   font-size: 24px;
   text-align: center;
   font-weight: 700;
+
+  &--ok {
+    margin-bottom: 20px;
+  }
+}
+
+.pop-up__desc {
+  margin-bottom: 35px;
+  text-align: center;
 }
 
 .pop-up__input {
@@ -99,4 +122,8 @@
 
 .pop-up__submit {
   width: 260px;
+}
+
+.pop-up__ok {
+  width: 122px;
 }
