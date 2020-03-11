@@ -1,9 +1,11 @@
 .pop-up {
   position: fixed;
+  justify-content: center;
+  align-items: center;
   z-index: 1000;
   top: 0px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   display: none;
   overflow: auto;
   background: rgba(255, 254, 253, 0.8);
@@ -12,10 +14,9 @@
 
 .pop-up__wrapper {
   position: fixed;
-  left: 15px;
+  margin: 70px 0;
   width: calc(100% - 30px);
   padding: 60px 15px;
-  margin: 70px 0;
   box-shadow: 0px 0px 25px rgba(153, 153, 153, 0.25);
   border-radius: 10px;
   background: url("../img/paw-popup.png") no-repeat;
@@ -25,7 +26,6 @@
 
   &--ok {
     display: none;
-    margin-top: 70%;
     background: url("../img/paw-popup-ok.png") no-repeat;
     background-size: 40%;
     background-position: -20px 120%;
@@ -126,4 +126,30 @@
 
 .pop-up__ok {
   width: 122px;
+}
+
+// Media
+@media(min-width: $tablet) {
+  .pop-up {
+    align-items: flex-start;
+  }
+
+  .pop-up__wrapper {
+    width: 500px;
+    padding: 60px 30px;
+    margin: 136px 0;
+    background-position: -60px -60px;
+
+    &--ok {
+      background-position: -40px 160%;
+    }
+  }
+}
+
+@media(min-width: $desktop) {
+  .pop-up__wrapper {
+    width: 570px;
+    padding: 70px;
+    margin: 146px 0;
+  }
 }

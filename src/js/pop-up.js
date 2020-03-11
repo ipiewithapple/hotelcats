@@ -8,7 +8,7 @@ export default function () {
   const popUpForm = document.querySelector('.pop-up__form');
 
   const closePopup = () => {
-    document.body.style.overflow = 'auto';
+    document.body.style.overflowY = 'auto';
     popUpOuter.style.display = 'none';
     popUp.classList.remove('animated', 'slideInDown');
     popUpOk.style.display = 'none';
@@ -16,8 +16,8 @@ export default function () {
 
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      document.body.style.overflow = 'hidden';
-      popUpOuter.style.display = 'block';
+      document.body.style.overflowY = 'hidden';
+      popUpOuter.style.display = 'flex';
       popUp.classList.add('animated', 'slideInDown');
     })
   });
