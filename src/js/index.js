@@ -12,4 +12,11 @@ new WOW().init();
 new Slider('reviews', 'reviews__list', 'reviews__list-item').init();
 new Slider('rooms', 'rooms__list', 'rooms__list-item').init();
 
+document.querySelectorAll('.btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+        document.querySelector('.pop-up').style.display = 'block';
+        // document.body.style.overflow = 'hidden';
+    })
+})
+
 
