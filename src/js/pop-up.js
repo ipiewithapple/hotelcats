@@ -17,7 +17,7 @@ export default function () {
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelector('html', 'body').style.overflowY = 'hidden';
-      popUpOuter.style.display = 'flex';
+      popUpOuter.style.display = 'block';
       popUp.style.display = 'block';
       popUp.classList.add('animated', 'slideInDown');
     })
