@@ -18,6 +18,7 @@ export default function () {
     btn.addEventListener('click', () => {
       document.querySelector('html', 'body').style.overflowY = 'hidden';
       popUpOuter.style.display = 'flex';
+      popUp.style.display = 'block';
       popUp.classList.add('animated', 'slideInDown');
     })
   });
@@ -29,8 +30,9 @@ export default function () {
   popUpForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     popUp.classList.remove('animated', 'slideInDown');
-    popUp.classList.add('animated','fadeOut');
-    popUpOk.classList.add('animated','fadeIn');
+    // popUp.classList.add('animated','fadeOut');
+    popUp.style.display = 'none';
+    // popUpOk.classList.add('animated','fadeIn');
     popUpOk.style.display = 'block';
   });
 
