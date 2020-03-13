@@ -29,10 +29,11 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env', {
-                modules: false
+                debug: true,
+                corejs: 3,
+                useBuiltIns: "usage"
               }],
-            ],
-            plugins: ['@babel/plugin-proposal-class-properties'],
+            ]
           }
         }
       },
@@ -92,11 +93,6 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: './src/img',
       to: './img'
-    }]),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),
+    }])
   ]
 };

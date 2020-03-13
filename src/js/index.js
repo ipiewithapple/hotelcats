@@ -1,10 +1,10 @@
 import WOW from 'wow.js';
-import Menu from './menu.js';
-import PopUp from './pop-up.js';
+import menu from './menu.js';
+import popUp from './pop-up.js';
 import Slider from './slider.js';
 
 // Menu burger
-Menu();
+menu();
 
 // WOW init
 new WOW().init();
@@ -14,6 +14,6 @@ new Slider('reviews', 'reviews__list', 'reviews__list-item').init();
 new Slider('rooms', 'rooms__list', 'rooms__list-item').init();
 
 // Pop-Up
-PopUp();
+popUp();
 
 

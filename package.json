@@ -16,7 +16,7 @@
   "browserslist": [
     "last 2 version",
     "> 1%",
-    "IE 10"
+    "not dead"
   ],
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -25,6 +25,7 @@
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.1.1",
+    "core-js": "^3.6.4",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "del-cli": "^3.0.0",
