@@ -14,4 +14,11 @@ html(lang="en")
   body
     include ../includes/header.pug
     main.main
+      .container
+        h2.rooms-page__title Наши номера
+        .rooms-page__wrapper
+          form.rooms-page__filter
+          +rooms-page-list
+          
     include ../includes/footer.pug
+    

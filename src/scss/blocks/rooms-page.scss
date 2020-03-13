@@ -1,0 +1,26 @@
+.rooms-page__title {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.rooms-page__list-img {
+  @include room-img;
+}
+
+.rooms-page__list-wrapper {
+  @include list-item;
+  @include room-wrap;
+}
+
+.rooms-page__list-title {
+  @include room-title
+}
+
+.rooms-page__list-inner {
+  margin-bottom: 25px;
+  font-size: 15px;
+
+  & li {
+    margin-bottom: 15px;
+  }
+}

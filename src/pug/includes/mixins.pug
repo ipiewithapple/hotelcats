@@ -1,3 +1,7 @@
+//-------------//
+//- INDEX PAGE-//
+//-------------// 
+
 //- Variables
 -
   var links = [
@@ -122,3 +126,36 @@ mixin reviews-list
           footer
             span.reviews__list-author= review.author
             span.reviews__list-date= review.date
+
+//------------//
+//-ROOMS PAGE-//
+//------------//
+
+//- Variables
+
+-
+  var rpRooms = [
+    {title: "Эконом", img: "rooms-page-1.jpg", square: "Площадь - 0,63 м2", sizes: "Размеры (ШхГхВ) - 90х70х180 см", price: "Цена за сутки: 100₽"},
+    {title: "Эконом плюс", img: "rooms-page-2.jpg", square: "Площадь - 0,90 м2", sizes: "Размеры (ШхГхВ) - 90х100х180 см", price: "Цена за сутки: 200₽"},
+    {title: "Комфорт", img: "rooms-page-3.jpg", square: "Площадь - 1,13 м2", sizes: "Размеры (ШхГхВ) - 100х125х180 см", price: "Цена за сутки: 250₽"},
+    {title: "Сьют", img: "rooms-page-4.jpg", square: "Площадь - 1,56 м2", sizes: "Размеры (ШхГхВ) - 125х125х180 см", price: "Цена за сутки: 350₽"},
+    {title: "Люкс", img: "rooms-page-5.jpg", square: "Площадь - 2,56 м2", sizes: "Размеры (ШхГхВ) - 160х160х180 см", price: "Цена за сутки: 500₽"},
+    {title: "Супер-Люкс", img: "rooms-page-6.jpg", square: "Площадь - 2,88 м2", sizes: "Размеры (ШхГхВ) - 180х160х180 см", price: "Цена за сутки: 600₽"}
+  ]
+
+mixin rooms-page-list
+  ul.rooms-page__list
+    each room in rpRooms
+      li.rooms-page__list-item
+        picture
+          source(media="(min-width: 1366px)" srcset="./img/d-" + room.img)
+          source(media="(min-width: 768px)" srcset="./img/t-" + room.img)
+          img.rooms-page__list-img(src="./img/m-" + room.img, alt= room.title)
+        .rooms-page__list-wrapper
+          a.rooms-page__list-title= room.title
+          ul.rooms-page__list-inner
+            li= room.sizes
+            li= room.square
+            li= room.price
+          button.btn.btn--dark.btn--order Забронировать
+            span

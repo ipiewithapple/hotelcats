@@ -10,9 +10,10 @@ menu();
 new WOW().init();
 
 // Slider
-new Slider('reviews', 'reviews__list', 'reviews__list-item').init();
-new Slider('rooms', 'rooms__list', 'rooms__list-item').init();
-
+if (document.title == 'Котейка | Главная') {
+  new Slider('reviews', 'reviews__list', 'reviews__list-item').init();
+  new Slider('rooms', 'rooms__list', 'rooms__list-item').init();
+}
 // Pop-Up
 popUp();
 

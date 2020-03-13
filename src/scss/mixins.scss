@@ -1,6 +1,22 @@
-
 @mixin list-item {
   background-color: #ffffff;
   box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
   border-radius: 8px;
+}
+
+// Rooms list mobile
+
+@mixin room-img {
+  border-radius: 8px 8px 0 0;
+}
+
+@mixin room-wrap {
+  padding: 25px;
+}
+
+@mixin room-title {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
 }
