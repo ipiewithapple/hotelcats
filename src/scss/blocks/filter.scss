@@ -1,3 +1,7 @@
+.filter__form {
+  display: none;
+}
+
 .filter__buttons {
   display: flex;
   justify-content: space-between;
@@ -38,7 +42,7 @@
 
 // Media
 @media (min-width: $tablet) {
-  .filter__buttons-wrapper{
+  .filter__buttons-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,5 +55,15 @@
 
   .filter__btn {
     margin-right: 30px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .filter__form {
+    display: block;
+  }
+
+  .filter__btn {
+    display: none;
   }
 }

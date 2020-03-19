@@ -23,4 +23,3 @@ filterSelect.addEventListener('click', (e) => {
   filterSelect.classList.contains('filter__select--opened') ? filterSelect.classList.remove('filter__select--opened') : filterSelect.classList.add('filter__select--opened');
 })
 
-

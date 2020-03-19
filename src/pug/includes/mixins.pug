@@ -145,12 +145,31 @@ mixin reviews-list
 
 -
   var things = [
-    ['furniture-icon-none.svg'],
-    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg'],
-    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg'],
-    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg', 'furniture-icon-ball.svg'],
-    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg', 'furniture-icon-ball.svg'],
-    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg', 'furniture-icon-ball.svg', 'furniture-icon-house.svg'],
+    ["furniture-icon-none.svg"],
+    ["furniture-icon-bed.svg", "furniture-icon-toy.svg"],
+    ["furniture-icon-bed.svg", "furniture-icon-toy.svg"],
+    ["furniture-icon-bed.svg", "furniture-icon-toy.svg", "furniture-icon-ball.svg"],
+    ["furniture-icon-bed.svg", "furniture-icon-toy.svg", "furniture-icon-ball.svg"],
+    ["furniture-icon-bed.svg", "furniture-icon-toy.svg", "furniture-icon-ball.svg", "furniture-icon-house.svg"],
+  ]
+
+-
+  var filter = [
+    {name: "economy", square: "0,63 м2"},
+    {name: "economy-plus", square: "0,90 м2"},
+    {name: "comfort", square: "1,13 м2"},
+    {name: "suite", square: "1,56 м2"},
+    {name: "lux", square: "2,56 м2"},
+    {name: "super-lux", square: "2,88 м2"}
+  ]
+
+-
+  var filterThings = [
+    {name: "none", desc: "Пустой номер"},
+    {name: "bed", desc: "Лежак"},
+    {name: "toy", desc: "Когтеточка"},
+    {name: "ball", desc: "Игровой-комплекс"},
+    {name: "house", desc: "Домик"},
   ]
 
 mixin rooms-page-list
@@ -172,3 +191,25 @@ mixin rooms-page-list
             li= room.price
           button.btn.btn--dark.btn--order Забронировать
             span
+
+mixin filter-form
+  form.rooms-page__filter.filter__form
+    .filter__form-price
+      span.filter__form-title Цена за сутки, &#8381;
+      input(type="text")
+      input(type="text")
+    .filter__form-square
+      span.filter__form-title Площадь
+      .filter__form-checkbox
+        each elem in filter
+          input(type="checkbox", name= elem.name)
+          span= elem.square
+    .filter__form-things
+      span.filter__form-title Оснащение номера
+      .filter__form-checkbox
+        each elem in filterThings
+          input(type="checkbox", name= elem.name)
+          span= elem.desc
+    button.filter__form-btn(type="submit") Применить
+    button.filter__form-btn(type="reset") Сбросить фильтр
+

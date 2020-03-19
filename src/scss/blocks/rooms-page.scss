@@ -1,6 +1,6 @@
 .rooms-page {
   padding-top: 40px;
-} 
+}
 
 .rooms-page__title {
   text-align: left;
@@ -66,5 +66,11 @@
     &:nth-child(odd) {
       margin-right: 30px;
     }
+  }
+}
+
+@media(min-width: $desktop) {
+  .rooms-page__wrapper {
+    display: flex;
   }
 }
