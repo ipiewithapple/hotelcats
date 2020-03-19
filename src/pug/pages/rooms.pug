@@ -16,7 +16,16 @@ html(lang="en")
     main.main
       section.rooms-page
         .container
-          h2.rooms-page__title Наши номера
+          .filter__buttons-wrapper
+            h2.rooms-page__title Наши номера
+            .filter__buttons
+              button.filter__btn Фильтры
+                i.fas.fa-filter 
+              select.filter__select
+                option(value="") &#9650; По площади
+                option(value="") &#9660; По площади
+                option(value="") &#9650; По цене
+                option(value="") &#9660; По цене
           .rooms-page__wrapper
             form.rooms-page__filter
             +rooms-page-list

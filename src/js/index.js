@@ -17,4 +17,10 @@ if (document.title == 'Котейка | Главная') {
 // Pop-Up
 popUp();
 
+// Filter
+const filterSelect = document.querySelector('.filter__select');
+filterSelect.addEventListener('click', (e) => {
+  filterSelect.classList.contains('filter__select--opened') ? filterSelect.classList.remove('filter__select--opened') : filterSelect.classList.add('filter__select--opened');
+})
+
 

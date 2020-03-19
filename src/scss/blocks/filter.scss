@@ -1,0 +1,34 @@
+.filter__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.filter__btn {
+  padding: 15px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+
+  & i {
+    margin-left: 10px;
+  }
+}
+
+.filter__select {
+  padding: 15px;
+  padding-right: 50px;
+  background: #FFFFFF;
+  background: url("../img/arr-down.svg")no-repeat 90% center;
+  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+  border: none;
+  border-radius: 25px;
+  appearance: none;
+  cursor: pointer;
+
+  &--opened {
+    background: url("../img/arr-up.svg")no-repeat 90% center;
+  }
+}
