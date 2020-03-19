@@ -1,6 +1,6 @@
 .banner__wrapper {
   min-height: 520px;
-  padding: 50px 25px;
+  padding: 50px 20px;
   text-align: center;
   font-size: 15px;
   background: url("../img/banner-m.jpg") no-repeat center center;
@@ -9,7 +9,7 @@
 
   & .btn {
     margin: 30px auto;
-  } 
+  }
 }
 
 .banner__free-day {
@@ -21,4 +21,33 @@
   margin-bottom: 20px;
   font-size: 37px;
   font-weight: 700;
+}
+
+// Media
+@media(min-width: $tablet) {
+  .banner {
+    padding-top: 90px;
+  }
+
+  .banner__wrapper {
+    min-height: 360px;
+    padding: 70px 50px;
+    text-align: left;
+    font-size: 15px;
+    background: url("../img/banner-t.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 8px;
+
+    & .btn {
+      margin: 35px 0;
+    }
+  }
+
+  .banner__free-day {
+    font-size: 36px;
+  }
+
+  .banner__free {
+    font-size: 56px;
+  }
 }
