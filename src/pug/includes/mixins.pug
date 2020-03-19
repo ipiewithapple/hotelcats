@@ -143,9 +143,19 @@ mixin reviews-list
     {title: "Супер-Люкс", img: "rooms-page-6.jpg", square: "Площадь - 2,88 м2", sizes: "Размеры (ШхГхВ) - 180х160х180 см", price: "Цена за сутки: 600₽"}
   ]
 
+-
+  var things = [
+    ['furniture-icon-none.svg'],
+    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg'],
+    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg'],
+    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg', 'furniture-icon-ball.svg'],
+    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg', 'furniture-icon-ball.svg'],
+    ['furniture-icon-bed.svg', 'furniture-icon-toy.svg', 'furniture-icon-ball.svg', 'furniture-icon-house.svg'],
+  ]
+
 mixin rooms-page-list
   ul.rooms-page__list
-    each room in rpRooms
+    each room, i in rpRooms
       li.rooms-page__list-item
         picture
           source(media="(min-width: 1366px)" srcset="./img/d-" + room.img)
@@ -156,7 +166,9 @@ mixin rooms-page-list
           ul.rooms-page__list-inner
             li= room.sizes
             li= room.square
-            li Оснащение номера
+            li.rooms-page__list-things Оснащение номера
+              each thing in things[i]
+                img(src=`./img/${thing}`)
             li= room.price
           button.btn.btn--dark.btn--order Забронировать
             span

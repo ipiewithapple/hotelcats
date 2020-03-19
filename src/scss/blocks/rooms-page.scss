@@ -8,6 +8,10 @@
 
 .rooms-page__list-item {
   margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .rooms-page__list-img {
@@ -31,5 +35,15 @@
 
   & li {
     margin-bottom: 15px;
+  }
+}
+
+.rooms-page__list-things {
+  display: flex;
+
+  & img {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
   }
 }
