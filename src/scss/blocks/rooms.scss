@@ -22,7 +22,6 @@
 .rooms__list-wrapper {
   @include list-item;
   @include room-wrap;
-  border-radius: 0 0 8px 8px;
 }
 
 .rooms__list-title {
