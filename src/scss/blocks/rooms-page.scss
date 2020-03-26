@@ -32,7 +32,7 @@
 
 .rooms-page__list-inner {
   margin-bottom: 25px;
-  font-size: 15px;
+  font-size: 14px;
 
   & li {
     margin-bottom: 15px;
@@ -72,5 +72,26 @@
 @media(min-width: $desktop) {
   .rooms-page__wrapper {
     display: flex;
+  }
+
+  .rooms-page__list-item {
+    flex-basis: calc(33.333% - 20px);
+
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+
+    &:nth-child(3n+1) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(3n+2) {
+      margin-right: 30px;
+    }
+  }
+
+  .rooms-page__list-wrapper {
+    padding: 25px 20px;
+    padding-right: 0;
   }
 }
