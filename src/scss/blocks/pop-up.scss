@@ -1,9 +1,7 @@
 .pop-up {
   position: fixed;
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
-  top: 0px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -36,46 +34,7 @@
 }
 
 .pop-up__close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-
-  & span {
-    position: absolute;
-    top: 40%;
-    display: block;
-    margin: 0 auto;
-    width: 16px;
-    height: 2px;
-    background-color: $text-color;
-    border-radius: 50px;
-
-    &:first-child {
-      transform: rotate(45deg);
-    }
-
-    &:last-child {
-      transform: rotate(-45deg);
-    }
-  }
-
-  &:hover span {
-    background-color: $main;
-  }
-}
-
-.pop-up__title {
-  margin-bottom: 40px;
-  font-size: 24px;
-  text-align: center;
-  font-weight: 700;
-
-  &--ok {
-    margin-bottom: 20px;
-  }
+  @include pop-up-close;
 }
 
 .pop-up__desc {

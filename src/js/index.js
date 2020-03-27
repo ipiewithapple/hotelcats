@@ -1,6 +1,7 @@
 import WOW from 'wow.js';
 import menu from './menu.js';
 import popUp from './pop-up.js';
+import filter from './filter.js';
 import Slider from './slider.js';
 
 // Menu burger
@@ -17,4 +18,7 @@ if (document.title == 'Котейка | Главная') {
 // Pop-Up
 popUp();
 
-
+// Filter
+if (document.title == 'Котейка | Номера') {
+  filter();
+}
