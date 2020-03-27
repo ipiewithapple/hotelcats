@@ -24,7 +24,7 @@ export default function () {
   });
 
   popUpCloseBtn.forEach((btn) => {
-    btn.addEventListener('click', () => closePopup());
+    btn.addEventListener('click', closePopup);
   });
 
   popUpForm.addEventListener('submit', (evt) => {
@@ -36,5 +36,5 @@ export default function () {
     popUpOk.style.display = 'block';
   });
 
-  popUpOkBtn.addEventListener('click', () => closePopup());
+  popUpOkBtn.addEventListener('click', closePopup);
 };

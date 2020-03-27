@@ -134,12 +134,12 @@ mixin reviews-list
 //- Variables
 -
   var rpRooms = [
-    {title: "Эконом", img: "rooms-page-1.jpg", square: "Площадь - 0,63 м2", sizes: "Размеры (ШхГхВ) - 90х70х180 см", price: "Цена за сутки: 100₽"},
-    {title: "Эконом плюс", img: "rooms-page-2.jpg", square: "Площадь - 0,90 м2", sizes: "Размеры (ШхГхВ) - 90х100х180 см", price: "Цена за сутки: 200₽"},
-    {title: "Комфорт", img: "rooms-page-3.jpg", square: "Площадь - 1,13 м2", sizes: "Размеры (ШхГхВ) - 100х125х180 см", price: "Цена за сутки: 250₽"},
-    {title: "Сьют", img: "rooms-page-4.jpg", square: "Площадь - 1,56 м2", sizes: "Размеры (ШхГхВ) - 125х125х180 см", price: "Цена за сутки: 350₽"},
-    {title: "Люкс", img: "rooms-page-5.jpg", square: "Площадь - 2,56 м2", sizes: "Размеры (ШхГхВ) - 160х160х180 см", price: "Цена за сутки: 500₽"},
-    {title: "Супер-Люкс", img: "rooms-page-6.jpg", square: "Площадь - 2,88 м2", sizes: "Размеры (ШхГхВ) - 180х160х180 см", price: "Цена за сутки: 600₽"}
+    {title: "Эконом", img: "rooms-page-1.jpg", square: "Площадь - 0,63 м2", sizes: "Размеры (ШхГхВ) - 90х70х180 см", price: "Цена за сутки: 100₽", dataSquare: 0.63, dataPrice: 100},
+    {title: "Эконом плюс", img: "rooms-page-2.jpg", square: "Площадь - 0,90 м2", sizes: "Размеры (ШхГхВ) - 90х100х180 см", price: "Цена за сутки: 200₽", dataSquare: 0.90, dataPrice: 200},
+    {title: "Комфорт", img: "rooms-page-3.jpg", square: "Площадь - 1,13 м2", sizes: "Размеры (ШхГхВ) - 100х125х180 см", price: "Цена за сутки: 250₽", dataSquare: 1.13, dataPrice: 250},
+    {title: "Сьют", img: "rooms-page-4.jpg", square: "Площадь - 1,56 м2", sizes: "Размеры (ШхГхВ) - 125х125х180 см", price: "Цена за сутки: 350₽", dataSquare: 1.56, dataPrice: 350},
+    {title: "Люкс", img: "rooms-page-5.jpg", square: "Площадь - 2,56 м2", sizes: "Размеры (ШхГхВ) - 160х160х180 см", price: "Цена за сутки: 500₽", dataSquare: 2.56, dataPrice: 500},
+    {title: "Супер-Люкс", img: "rooms-page-6.jpg", square: "Площадь - 2,88 м2", sizes: "Размеры (ШхГхВ) - 180х160х180 см", price: "Цена за сутки: 600₽", dataSquare: 2.88, dataPrice: 600}
   ]
 
 -
@@ -175,7 +175,7 @@ mixin reviews-list
 mixin rooms-page-list
   ul.rooms-page__list
     each room, i in rpRooms
-      li.rooms-page__list-item.wow.slideInUp
+      li(data-price= room.dataPrice data-square= room.dataSquare).rooms-page__list-item
         picture
           source(media="(min-width: 1366px)" srcset="./img/d-" + room.img)
           source(media="(min-width: 768px)" srcset="./img/t-" + room.img)
