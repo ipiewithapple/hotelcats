@@ -173,6 +173,10 @@
 
   .filter__form {
     margin: 136px auto;
+
+    &--no-desktop {
+      padding: 50px 60px;
+    }
   }
 }
 
