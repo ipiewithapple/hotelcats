@@ -132,7 +132,6 @@ mixin reviews-list
 //------------//
 
 //- Variables
-
 -
   var rpRooms = [
     {title: "Эконом", img: "rooms-page-1.jpg", square: "Площадь - 0,63 м2", sizes: "Размеры (ШхГхВ) - 90х70х180 см", price: "Цена за сутки: 100₽"},
@@ -172,6 +171,7 @@ mixin reviews-list
     {name: "house", desc: "Домик"},
   ]
 
+//- Mixins
 mixin rooms-page-list
   ul.rooms-page__list
     each room, i in rpRooms
@@ -196,20 +196,25 @@ mixin filter-form
   form.rooms-page__filter.filter__form
     .filter__form-price
       span.filter__form-title Цена за сутки, &#8381;
-      input(type="text")
-      input(type="text")
+      div
+        input(type="text" placeholder="от 100" name="price-min")#price-min
+        input(type="text" placeholder="до 600" name="price-max")#pice-max
     .filter__form-square
       span.filter__form-title Площадь
       .filter__form-checkbox
         each elem in filter
-          input(type="checkbox", name= elem.name)
-          span= elem.square
+          div
+            input(type="checkbox", name= elem.name id=elem.name)
+            span
+            label(for= elem.name)= elem.square
     .filter__form-things
       span.filter__form-title Оснащение номера
       .filter__form-checkbox
         each elem in filterThings
-          input(type="checkbox", name= elem.name)
-          span= elem.desc
+          div
+            input(type="checkbox", name= elem.name id= elem.name)
+            span
+            label(for= elem.name)= elem.desc
     button.filter__form-btn(type="submit") Применить
     button.filter__form-btn(type="reset") Сбросить фильтр
 

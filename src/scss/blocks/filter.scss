@@ -2,6 +2,101 @@
   display: none;
 }
 
+.filter__form-title {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.filter__form-price {
+  margin-bottom: 35px;
+
+  & div {
+    display: flex;
+  }
+
+  & input {
+    width: 50%;
+    padding-left: 5px;
+    font-size: 14px;
+    border: 1px solid #E1E1E1;
+
+    &::placeholder {
+      color: $text-color;
+    }
+
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.filter__form-checkbox {
+  position: relative;
+  margin-bottom: 35px;
+
+  & div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+    height: 20px;
+    width: 20px;
+
+    &:checked~span {
+      background: url("../img/check.svg")no-repeat center center;
+    }
+  }
+
+  & span {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #E1E1E1;
+    cursor: pointer;
+  }
+
+  & label {
+    cursor: pointer;
+  }
+}
+
+.filter__form-btn {
+  padding: 11px 0;
+  width: 185px;
+  font-size: 14px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-radius: 25px;
+
+  &[type=submit] {
+    margin-bottom: 15px;
+    background-color: $main;
+    border: 2px solid $main;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &[type=reset] {
+    border: 2px solid $main;
+
+    &:hover {
+      background-color: $main;
+    }
+  }
+}
+
 .filter__buttons {
   display: flex;
   justify-content: space-between;
@@ -34,10 +129,6 @@
   border-radius: 25px;
   appearance: none;
   cursor: pointer;
-
-  &--opened {
-    background: url("../img/arr-up.svg")no-repeat 90% center;
-  }
 }
 
 // Media
@@ -61,6 +152,8 @@
 @media (min-width: $desktop) {
   .filter__form {
     display: block;
+    width: 210px;
+    margin-right: 90px;
   }
 
   .filter__btn {
