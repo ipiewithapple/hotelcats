@@ -22,18 +22,38 @@ export default function () {
   const onFilterSelectChange = () => {
 
     const roomsArr = [].slice.call(rooms);
-    const filteredRooms = roomsArr.sort((a,b) => {
-      return a.dataset.price - b.dataset.price ? -1 : 1;
-    })
-    
-    while(roomsList.firstChild) {
+    let filteredRooms = [];
+
+    switch (filterSelect.value) {
+      case 'square-down':
+        filteredRooms = roomsArr.sort((a, b) => {
+          return a.dataset.square - b.dataset.square ? -1 : 1;
+        });
+        break;
+      case 'price-down':
+        filteredRooms = roomsArr.sort((a, b) => {
+          return a.dataset.price - b.dataset.price ? -1 : 1;
+        });
+        break;
+      case 'price-up':
+        filteredRooms = roomsArr.sort((a, b) => {
+          return a.dataset.price - b.dataset.price ? 1 : -1;
+        });
+        break;
+      default:
+        filteredRooms = roomsArr.sort((a, b) => {
+          return a.dataset.square - b.dataset.square ? 1 : -1;
+        });
+    };
+
+    while (roomsList.firstChild) {
       roomsList.removeChild(roomsList.firstChild);
     };
 
     filteredRooms.forEach((room) => {
       roomsList.append(room);
     })
-    
+
   }
 
   filterBtn.addEventListener('click', openFilterForm);
