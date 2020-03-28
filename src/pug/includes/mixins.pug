@@ -76,7 +76,7 @@ mixin nav-mobile
         img.nav__logo-img(src="./img/logo.svg" alt="Котейка")
     ul.nav-mobile__list
       each link in links
-        li.nav-mobile__list-item: a.nav-mobile__list-link(href= link.href)= link.title
+        li.nav-mobile__list-item: a(href= link.href).nav-mobile__list-link= link.title
     a(href="tel:+").nav-mobile__tel 8 (800) 333-55-99
     +social
 
@@ -84,7 +84,7 @@ mixin abouts-list
   ul.abouts__list
     each item in abouts
       li(data-wow-delay= item.delay).abouts__list-item.wow.slideInUp
-        img.abouts__list-icon(src="./img/" + item.icon alt= item.title)
+        img(src="./img/" + item.icon alt= item.title).abouts__list-icon
         h3.abouts__list-title= item.title
         p.abouts__list-desc= item.desc
 
@@ -179,7 +179,7 @@ mixin rooms-page-list
         picture
           source(media="(min-width: 1366px)" srcset="./img/d-" + room.img)
           source(media="(min-width: 768px)" srcset="./img/t-" + room.img)
-          img.rooms-page__list-img(src="./img/m-" + room.img, alt= room.title)
+          img(src="./img/m-" + room.img, alt= room.title).rooms-page__list-img
         .rooms-page__list-wrapper
           a(href="/room-detail.html").rooms-page__list-title= room.title
           ul.rooms-page__list-inner
@@ -187,7 +187,7 @@ mixin rooms-page-list
             li= room.square
             li.rooms-page__list-things Оснащение номера
               each thing in things[i]
-                img(src=`./img/${thing}`)
+                img(src=`./img/${thing}` alt="furniture")
             li= room.price
           button.btn.btn--dark.btn--order Забронировать
             span
@@ -218,6 +218,6 @@ mixin filter-form
             input(type="checkbox", name= elem.name id= elem.name)
             span
             label(for= elem.name)= elem.desc
-    button.filter__form-btn(type="submit") Применить
-    button.filter__form-btn(type="reset") Сбросить фильтр
+    button(type="submit").filter__form-btn Применить
+    button(type="reset").filter__form-btn Сбросить фильтр
 

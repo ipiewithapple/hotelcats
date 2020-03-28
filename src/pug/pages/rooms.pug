@@ -3,7 +3,7 @@
 include ../includes/mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -29,7 +29,7 @@ html(lang="en")
                 option(value="price-up") &#9650; По цене
                 option(value="price-down") &#9660; По цене
           .rooms-page__wrapper
-            .filter__form-popup
+            aside.filter__form-popup
               +filter-form
             +rooms-page-list
       section.banner.wow.bounceInLeft
