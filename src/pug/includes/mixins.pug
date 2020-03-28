@@ -97,7 +97,7 @@ mixin rooms-list
           source(media="(min-width: 768px)" srcset="./img/t-" + room.img)
           img.rooms__list-img.wow.slideInLeft(src="./img/m-" + room.img, alt= room.title)
         .rooms__list-wrapper.wow.slideInRight
-          a.rooms__list-title= room.title
+          a(href="/room-detail.html").rooms__list-title= room.title
           ul.rooms__list-inner
             li= room.square
             li= room.sizes
@@ -181,7 +181,7 @@ mixin rooms-page-list
           source(media="(min-width: 768px)" srcset="./img/t-" + room.img)
           img.rooms-page__list-img(src="./img/m-" + room.img, alt= room.title)
         .rooms-page__list-wrapper
-          a.rooms-page__list-title= room.title
+          a(href="/room-detail.html").rooms-page__list-title= room.title
           ul.rooms-page__list-inner
             li= room.sizes
             li= room.square
