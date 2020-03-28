@@ -20,7 +20,7 @@ export default function () {
       popUpOuter.style.display = 'block';
       popUp.style.display = 'block';
       popUp.classList.add('animated', 'slideInDown');
-    })
+    });
   });
 
   popUpCloseBtn.forEach((btn) => {
@@ -37,4 +37,4 @@ export default function () {
   });
 
   popUpOkBtn.addEventListener('click', closePopup);
-};
+}

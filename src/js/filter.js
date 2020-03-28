@@ -6,6 +6,7 @@ export default function () {
   const filterSelect = document.querySelector('.filter__select');
   const roomsList = document.querySelector('.rooms-page__list');
   const rooms = document.querySelectorAll('.rooms-page__list-item');
+  const filterFormSubmit = document.querySelector('.filter__form-btn[type=submit]');
 
   const closeFilterForm = () => {
     document.querySelector('html', 'body').style.overflowY = 'auto';
@@ -52,11 +53,24 @@ export default function () {
 
     filteredRooms.forEach((room) => {
       roomsList.append(room);
-    })
-
-  }
+    });
+  };
 
   filterBtn.addEventListener('click', openFilterForm);
   filterCloseBtn.addEventListener('click', closeFilterForm);
   filterSelect.addEventListener('change', onFilterSelectChange);
+
+// Доделать
+  const myPromise = (evt) => {
+    evt.preventDefault();
+    const divInfo = document.createElement('div');
+    divInfo.setAttribute('style', 'position: fixed; top: 20px; left: 30px; width: 200px; height: 100px; padding: 15px; font-size: 18px; color: #ffffff; background-color: #fac663; border-radius: 8px;');
+    divInfo.textContent = 'Когда-нибудь у меня дойдут руки, и я его доделаю :)';
+    document.body.append(divInfo);
+    setTimeout(() =>{
+      divInfo.remove();
+    }, 3000);
+  }
+
+  filterFormSubmit.addEventListener('click', myPromise);
 }

@@ -12,6 +12,6 @@ export default function () {
     el.addEventListener('click', () => {
       mobileMenu.classList.remove('nav-mobile--open');
       burger.classList.remove('nav__burger--open');
-    })
+    });
   });
 }

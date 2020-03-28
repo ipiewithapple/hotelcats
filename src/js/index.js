@@ -21,4 +21,4 @@ popUp();
 // Filter
 if (document.title == 'Котейка | Номера') {
   filter();
-}
+};
