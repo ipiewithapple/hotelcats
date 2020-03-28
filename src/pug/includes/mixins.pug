@@ -175,7 +175,7 @@ mixin reviews-list
 mixin rooms-page-list
   ul.rooms-page__list
     each room, i in rpRooms
-      li(data-price= room.dataPrice data-square= room.dataSquare).rooms-page__list-item
+      li(data-price= room.dataPrice data-square= room.dataSquare).rooms-page__list-item.animated.fadeIn
         picture
           source(media="(min-width: 1366px)" srcset="./img/d-" + room.img)
           source(media="(min-width: 768px)" srcset="./img/t-" + room.img)
