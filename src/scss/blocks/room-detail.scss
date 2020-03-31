@@ -3,10 +3,33 @@
 
   & li {
     font-size: 15px;
-  }
-}
+    margin-bottom: 20px;
 
-.room-detail__title {
-  text-align: left;
-  margin-bottom: 30px;
-}
+    &:last-child {
+      margin-bottom: 0;
+
+      & span {
+        font-size: 18px;
+      }
+    }
+
+    &>ul {
+      padding-top: 15px;
+      & li {
+        display: flex;
+        margin-bottom: 15px;
+      }
+
+        & img {
+          width: 18px;
+          height: 18px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .room-detail__title {
+    text-align: left;
+    margin-bottom: 30px;
+  }
