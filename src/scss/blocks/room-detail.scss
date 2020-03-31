@@ -1,5 +1,6 @@
 .room-detail {
   padding-top: 40px;
+  margin-bottom: 30px;
 
   & ul {
     margin-bottom: 20px;
@@ -19,28 +20,31 @@
 
     &>ul {
       padding-top: 15px;
+
       & li {
         display: flex;
         margin-bottom: 10px;
       }
 
-        & img {
-          width: 18px;
-          height: 18px;
-          margin-right: 10px;
-        }
+      & img {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
       }
     }
   }
+}
 
-  .room-detail__title {
-    text-align: left;
-    margin-bottom: 30px;
-  }
+.room-detail__title {
+  text-align: left;
+  margin-bottom: 30px;
+}
 
-  // Media
+// Media
 @media (min-width: $tablet) {
-  .room-detail{
+  .room-detail {
+    padding-top: 60px;
+
     & .container {
       display: flex;
     }
@@ -52,5 +56,11 @@
 
   .room-detail__btn {
     margin: 0;
+  }
+}
+
+@media (min-width: $desktop) {
+  .room-detail {
+    padding-top: 70px;
   }
 }
