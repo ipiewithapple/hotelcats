@@ -2,6 +2,7 @@ import WOW from 'wow.js';
 import menu from './menu.js';
 import popUp from './pop-up.js';
 import filter from './filter.js';
+import roomDetailSlider from './room-detail-slider.js';
 import Slider from './slider.js';
 
 // Menu burger
@@ -25,4 +26,9 @@ popUp();
 // Filter
 if (document.title == 'Котейка | Номера') {
   filter();
+};
+
+// Room detail slider
+if (document.title == 'Котейка | Подробно') {
+  roomDetailSlider();
 };
