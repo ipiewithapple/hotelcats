@@ -59,3 +59,20 @@
     opacity: 0;
   }
 }
+
+  // Media
+  @media (min-width: $tablet) {
+    .room-slider {
+      width: 50%;
+      margin-right: 60px;
+      margin-bottom: 0;
+    }
+
+    .room-slider__main-photo {
+      margin-bottom: 20px;
+    }
+
+    .room-slider__slide-mini {
+      height: 78px;
+    }
+  }
