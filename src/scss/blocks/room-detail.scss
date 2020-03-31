@@ -1,3 +1,12 @@
 .room-detail {
   padding-top: 40px;
+
+  & li {
+    font-size: 15px;
+  }
+}
+
+.room-detail__title {
+  text-align: left;
+  margin-bottom: 30px;
 }
